@@ -1,7 +1,6 @@
 
 // Function to create and append a button element
 // Function to create and append an image button element
-console.log("Script running");
 function createButton() {
     const button = document.createElement("img");
     button.src = chrome.runtime.getURL("assets/send.png"); 

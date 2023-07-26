@@ -1,53 +1,98 @@
-.container {
-    width: 280px;
-    color: #314d3e;
-  }
+#page2{
+  display: none;
+}
+
+body{
+  font-family: Georgia, serif;
+  display:flex;
+  flex-direction: column;
+  width:400px;
+  height:400px;
+  background-color: white;
+}
+.container{
+  align-self: center;
+  align-items: center;
+  width:380px;
+  height:350px;
+  border: solid #909090;
+  border-radius: 5px;
+  background-color:  rgb(229, 229, 229);
+  font-size:x-large;
+  display:flex;
+  flex-direction: column;
+}
+.wordinfo{
+    width:330px;
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px;
+    margin-top:10px
+}
+.wordinfo label{
+    margin-right: 10px;
+}
+.wordinfo input{
+  margin-left: auto;
+  width: 50px;
+  height:30px;
+  font-size:  24px;
+  flex:1;
+}
+.wordinfo textarea{
+  flex:1;
+  width:150px;
+  height:170px;
+  font-size:  24px;
+  box-sizing:border-box;
+  resize:none;
+}
+button{
+  background-color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  align-content: center;
+}
+button:hover{
+  background-color: #ccc;
+}
+button:active{
+  background-color: #9a9a9a;
+}
+.heading{
+  display: flex;
+  width: 400px;
+}
+h2{
   
-  .title {
-    font-size: 14px;
-    font-weight: bold;
-    padding: 8px;
-  }
-  
-  .textbox {
-    width: 100%;
-    font-size: 12px;
-    margin: 0;
-    padding: 0px 2px;
-  }
-  
-  .textbox:focus {
-    outline: 0;
-    border-color: #66afe9;
-  }
-  
-  .bookmarks {
-    margin: 5px 5px;
-    padding: 3px;
-  }
-  
-  .bookmark {
-    display: flex;
-    border-bottom-color: #00254d;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-radius: 0.8rem;
-    padding: 3px;
-    padding-bottom: 7px;
-    margin-bottom: 7px;
-  }
-  
-  .bookmark-title {
-    padding-left: 2px;
-  }
-  
-  .bookmark-controls img {
-    margin: 0 4px;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-  }
-  .bookmark-controls {
-    flex: auto;
-    text-align: right;
-  }
+  font-size: 25px;
+  align-self: flex-start;
+  margin:10px;
+}
+#settings{
+  width:30px;
+  height:30px;
+  background-image:url(./assets/setting.png);
+  background-size: 90%;
+  background-position: center;
+  background-repeat:no-repeat;
+  border:none;
+  margin-left: auto;
+}
+#sendButton{
+  margin-top: 5px;
+  /* margin-left: 90px; */
+  font-family: Georgia, serif;
+  font-size: x-large;
+  width:330px;
+  height:40px;
+  background-color:#d6d6d6;
+  align-content: center;
+  border-radius: 5px;
+}
+#sendButton:hover{
+  background-color: #ccc;
+}
+#sendButton:active{
+  background-color: #9a9a9a;
+}
