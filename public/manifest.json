@@ -1,0 +1,46 @@
+{
+  "name": "Dictionary to Notion",
+  "version": "0.1.0",
+  "description": "Saving Dicionary vocabularies to Notion",
+  "permissions": [
+      "pageCapture", 
+      "storage", 
+      "tabs"
+  ],
+  "host_permissions":[
+      "https://*.oxfordlearnersdictionaries.com/definition/english/*",
+      "https://*.notion.so/*",
+      "https://*.notion.com/*"
+  ],
+  "background":{
+      "service_worker": "bundle.js"
+  },
+  "content_scripts":[
+      {
+          "matches":["https://*.oxfordlearnersdictionaries.com/*"],
+          "js":["contentScript.js"],
+          "web_accessible_resources": [
+              {
+                "resources": ["assets/send.png"],
+                "matches": ["https://*.oxfordlearnersdictionaries.com/*"]
+              }
+          ]
+      }
+  ],
+  "web_accessible_resources": [
+      {
+        "resources": ["icons/send.png"],
+        "matches": ["https://*.oxfordlearnersdictionaries.com/*"]
+      }
+  ],
+  "action":{
+      "default_icon":{
+          "16": "icons/ext-icon.png",
+          "24": "icons/ext-icon.png",
+          "32": "icons/ext-icon.png"
+      },
+      "default_title":"Send Vocab to Notion",
+      "default_popup":"popup.html"
+  },
+  "manifest_version" : 3
+}

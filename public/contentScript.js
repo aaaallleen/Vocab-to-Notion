@@ -3,7 +3,7 @@
 // Function to create and append an image button element
 function createButton() {
     const button = document.createElement("img");
-    button.src = chrome.runtime.getURL("assets/send.png"); 
+    button.src = chrome.runtime.getURL("icons/send.png"); 
     button.alt = "Send to Notion";
     //css for the button layout
     button.style.cursor = "pointer";
@@ -56,6 +56,15 @@ function getWord() {
         pos : pos
     }
 } 
+function getDate(){
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    // const monthAbbrv =  ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    const day = currentDate.getDate().toString().padStart(2, '0');
+    const date = year+"-"+month+"-"+day;
+    return date;
+}
 function injectButtonIntoPage() {
     // Find all occurrences of the class "sense" on the page
     const SensElements = document.querySelectorAll(".sense");
@@ -71,11 +80,18 @@ function injectButtonIntoPage() {
         else{
         console.error("No definitions found");
         }
-        const definition = extractDefinition(SensElement);
-        Word.definition = definition;
+        Word.definition = extractDefinition(SensElement);
+        Word.date = getDate();
         console.log(Word);
         button.addEventListener("click", () => {
-        handleButtonClick(button, Word);
+           chrome.runtime.sendMessage({action: "sendToNotion", data: Word }, (response)=>{
+                if(response.success){
+                    alert("Vocabulary sent to Notion successfully!");
+                }
+                else{
+                    alert("Error sending vocabulary to Notion. Please try again later.");
+                }
+            });
         });
     });
     
