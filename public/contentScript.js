@@ -21,17 +21,6 @@ function createButton() {
 
   
 //   // Function to handle the button click event
-function handleButtonClick(button, vocabularyData) {
-    // Send the vocabulary data to the background script
-    chrome.runtime.sendMessage({ action: "sendToNotion", data: vocabularyData }, (response) => {
-    //   if (response.success) {
-    //     alert("Vocabulary sent to Notion successfully!");
-    //   } else {
-    //     alert("Error sending vocabulary to Notion. Please try again later.");
-    //   }
-    });
-}
-  
 //   // Function to extract vocabulary data from the Oxford Dictionary page
 function extractDefinition(element) {
     const defElement = element.querySelector(".def");
@@ -68,7 +57,6 @@ function getDate(){
 function injectButtonIntoPage() {
     // Find all occurrences of the class "sense" on the page
     const SensElements = document.querySelectorAll(".sense");
-    console.log("There are", SensElements.length, "definitions");
     // Iterate through each "sense" element and add a button beside it
     const Word = getWord();
     SensElements.forEach((SensElement) => {
@@ -82,21 +70,19 @@ function injectButtonIntoPage() {
         }
         Word.definition = extractDefinition(SensElement);
         Word.date = getDate();
-        console.log(Word);
         button.addEventListener("click", () => {
            chrome.runtime.sendMessage({action: "sendToNotion", data: Word }, (response)=>{
                 if(response.success){
                     alert("Vocabulary sent to Notion successfully!");
                 }
                 else{
-                    alert("Error sending vocabulary to Notion. Please try again later.");
+                    alert(response.error);
                 }
             });
         });
     });
     
 }
-  
 
 function executeOnDOMReady(callback) {
     if (document.readyState === "loading") {
@@ -110,10 +96,13 @@ function executeOnDOMReady(callback) {
     }
   }
   
-  // Call the function with your code as the argument
 executeOnDOMReady(() => {
-    console.log("DOM fully loaded.");
     injectButtonIntoPage();
 });
 
-  
+chrome.runtime.onMessage.addListener((message, sender)=>{
+    console.log("coooooooooooooooooool");
+    if(message.action == "show Alert"){
+       alert("coooool");
+    }
+});

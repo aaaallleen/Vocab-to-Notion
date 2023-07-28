@@ -96,3 +96,7 @@ h2{
 #sendButton:active{
   background-color: #9a9a9a;
 }
+#message{
+  color: red;
+  align-self: center;
+}
