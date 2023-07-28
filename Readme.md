@@ -1,4 +1,3 @@
-remember to run browserify public/background.js -o public/bundle.js in the cmd
 Icons used are as below:
 
 Send icon:

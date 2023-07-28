@@ -1087,8 +1087,6 @@ exports.Response = globalObject.Response;
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],10:[function(require,module,exports){
 
-
-
 chrome.runtime.onMessage.addListener((message, sender, sendResponse)=>{
     if(message.action == "sendToNotion"){
         const messageDt = message.data;
