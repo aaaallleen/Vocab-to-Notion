@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Dashboard for Dict to Notion</title>
+    <link rel="stylesheet" href="settings.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+    <div class="sidebar" id="Dbtitle">
+      <div class="logo-details">
+          <div class="logo_name">Dict to Notion</div>
+          <i class='bx bx-menu' id="btn" ></i>
+      </div>
+      <ul class="nav-list">
+        <li id="Home">
+          <a href="#">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Home</span>
+          </a>
+          <span class="tooltip">Home</span>
+        </li>
+      <li id="Settings">
+        <a href="#">
+          <i class='bx bx-cog' ></i>
+          <span class="links_name">Setting</span>
+        </a>
+        <span class="tooltip">Setting</span>
+      </li>
+      <li id="Contacts">
+        <a href="#">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">Contacts</span>
+        </a>
+        <span class="tooltip">Contacts</span>
+      </li>
+      <li id="Attributes">
+        <a href="#">
+          <i class='bx bx-tag' ></i>
+          <span class="links_name">Attributes</span>
+        </a>
+        <span class="tooltip">Attributes</span>
+      </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <div class="text" id = "Dashboardtxt">Dashboard</div>
+      <div class="content">
+        <!-- Page 1 -->
+        <div id="page1">
+            <h3>About</h3>
+            <div id ="about">
+              <li>The Plugin allows adds a button to the Oxford learner's dictionary page and allows you to send the data of the vocabulary to Notion.</li>
+              <li>You can also add your own vocabularies from the popup. </li>
+              <img src = "img/demo1.png" alt="Demo on Oxford Learner's Dictionary">
+              <img src = "img/demo2.png" alt="Demo on Popup">
+            </div>
+            <h3>Setup</h3>
+              <div id = "setup">
+                <ol>
+                  <li>Create an Notion Integration: <a href="https://www.notion.so/help/create-integrations-with-the-notion-api">Notion's guide on how to create an integration</a></li>
+                  <li>Copy the Internal Integration Secret</li>
+                  <li>Duplicate this database to your own Notion: <a href="https://electric-mice-3d7.notion.site/Vocabularies-5808944f5d7846eb8a72a148aef42052?pvs=4">Database Template</a></li>
+                  <li>Add the Notion Integration into your duplicated database: <a href="https://www.notion.so/help/add-and-manage-connections-with-the-api#add-connections-to-pages">Notion's guide on how to add connections to pages</a></li>
+                  <li>Find the database ID: <a href="https://developers.notion.com/reference/retrieve-a-database">Notion's guid on how to find the Database ID</a></li>
+                  <li>Click on the settings Icon and navigate to the settings dashboard, on the left hand side you will find the settings tab, enter your KEY and Database ID</li>
+                  <li>You're good to go!</li>
+                </ol>
+              </div>
+        </div>
+
+        <!-- Page 2 -->
+        <div id="page2" class="hidden">
+            <h3>Settings</h3>
+            <div class = "inputDiv">
+              <p id = "cur_KEY"></p>
+              <button id="setKEY" class = "inputbutton">Setup KEY</button>
+            </div>
+            <div class = "inputDiv">
+              <p id = "cur_ID"></p>
+              <button id="setID" class = "inputbutton">Setup Database ID</button>
+            </div>
+            <button id="clearKEYID" class = "clearbutton">Clear KEY and Database ID</button>
+        </div>
+
+        <!-- Page 3 -->
+        <div id="page3" class="hidden">
+          <h3>Contacts</h3>
+          <div class="links">
+              <a href="mailto:aaaallleen0119@gmail.com">
+                  <img src="img/mail.png" alt="Email icon" class="link">
+              </a>
+              <a href="https://github.com/aaaallleen/Vocab-to-Notion" >
+                  <img src="img/github.png" alt="Github icon" class="link">
+              </a>
+              <a href="https://www.linkedin.com/in/aaaallleen119/">
+                  <img src="img/linkedin.png" alt="LinkedIn icon" class="link">
+              </a>
+          </div>
+      </div>
+
+        <div id="page4" class="hidden">
+          <h3>Attributes</h3>
+          <div class="links">
+            <h5> Icons used are as below:</h5>
+           
+            <ul>
+              <li><a href="https://www.flaticon.com/free-icons/send" title="send icons">Send icons created by Becris - Flaticon</a></li>
+              <li><a href="https://www.flaticon.com/free-icons/poop" title="poop icons">Poop icons created by Smashicons - Flaticon</a></li>
+              <li><a href="https://www.flaticon.com/free-icons/settings" title="settings icons">Settings icons created by Freepik - Flaticon</a></li>
+              <li><a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Freepik - Flaticon</a></li>
+              <li><a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Freepik - Flaticon</a></li>
+              <li><a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a></li>
+            </ul>
+            <h5>Dashboard design: </h5>
+            <ul>
+              <li><a href="https://www.codingnepalweb.com/responsive-side-navigation-bar-in-html-css-javascript/">Responsive Side Navigation Bar in HTML CSS & JavaScript</a></li>
+            </ul>
+                
+          </div>
+      </div>
+        <div id="setKeyPage" class="hidden">
+            <h1>Settings</h1>
+            <div class="container">
+                <form id="KEYform">
+                    <div class = "info" id = "d1">
+                        <label for="KeyField">Notion API Key: </label>
+                        <input type="password" id="KeyField" name="IDField" placeholder="Enter your API Key" required>
+                    </div>
+                </form>
+                <button class="setbutton" type="submit" id="submitKEYButton">Submit</button>
+                <button class="setbutton" type="cancel" id="cancelButton">Cancel</button>
+            </div>
+        </div>
+
+        <div id="setIDPage" class="hidden">
+          <h1>Settings</h1>
+          <div class="container">
+              <form id="IDform">
+                  <div class = "info" id = "d2">
+                      <label for="IDField">Database ID: </label>
+                      <input type="password" id="IDField" name="IDField" placeholder="Enter your database ID" required>
+                  </div>
+              </form>
+              <button class="setbutton" type="submit" id="submitIDButton">Submit</button>
+              <button class="setbutton" type="cancel" id="cancelButton2">Cancel</button>
+          </div>
+      </div>
+    </div>
+    </section>
+
+    
+
+    <script src="settings.js"></script>
+</body>
+</html>

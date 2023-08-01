@@ -1,4 +1,6 @@
 
+
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse)=>{
     if(message.action == "sendToNotion"){
         const messageDt = message.data;
@@ -12,8 +14,34 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse)=>{
     return true;
   }
 });
+
+function retrieveInfo() {
+    return new Promise((resolve, reject) => {
+      chrome.storage.local.get(["KEY", "DATABASE_ID"], function(data) {
+        if (chrome.runtime.lastError) {
+          console.log("Error reading data from local storage:", chrome.runtime.lastError.message);
+          reject(chrome.runtime.lastError.message);
+          return;
+        }
+        
+        const KEY = "secret_"+data.KEY;
+        const ID = data.DATABASE_ID;
+        resolve({ KEY: KEY, ID: ID });
+      });
+    });
+  }
+  
 async function addToNotionDatabase(data){
     try{
+        let NOTION_API_KEY, NOTION_DATABASE_ID;
+        try{
+            const { KEY, ID } = await retrieveInfo();
+            NOTION_API_KEY = KEY;
+            NOTION_DATABASE_ID = ID;
+        }catch(error){
+            console.error("Error retrieving info from local storage:", error.message);
+        }
+        
         const { Client } = require('@notionhq/client');
         const notion = new Client({ auth: NOTION_API_KEY });
         if(data.pos){

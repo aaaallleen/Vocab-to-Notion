@@ -9,7 +9,7 @@ function createButton() {
     button.style.cursor = "pointer";
     button.style.verticalAlign = "middle";
     button.style.border = "2px solid #a6a6a6";
-    button.style.background = "#ccc";
+    button.style.background = "#d1d1d1";
     button.style.borderRadius = "10%";
     button.style.border
     button.style.marginLeft = "10px";

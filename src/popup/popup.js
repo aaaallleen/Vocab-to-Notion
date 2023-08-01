@@ -8,6 +8,15 @@ function getDate(){
   console.log(date);
   return date;
 }
+function checkvalid(){
+  form = document.getElementById("vocabForm");
+  if(form.checkValidity()){
+      senddata();
+  }
+  else{
+    form.reportValidity();
+  }
+}
 function senddata () {
     console.log("button click");
     try{
@@ -46,8 +55,8 @@ function senddata () {
 document.addEventListener("DOMContentLoaded", function () {
     const settingsBtn = document.getElementById("settings");
     settingsBtn.addEventListener("click", function () {
-        window.open("settings.html",'_blank');
+        window.open("../dashboard/settings.html",'_blank');
     });
     const sendBtn = document.getElementById("sendButton");
-    sendBtn.addEventListener("click", senddata);
+    sendBtn.addEventListener("click", checkvalid);
 });
