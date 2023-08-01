@@ -16,9 +16,9 @@ Setup:
 [Notion's guide on how to create an integration](https://www.notion.so/help/create-integrations-with-the-notion-api)
 2. Copy the Internal Integration Secret
 3. Duplicate this database to your own Notion: https://electric-mice-3d7.notion.site/Vocabularies-5808944f5d7846eb8a72a148aef42052?pvs=4
-4. Add the Notion Integration into your duplicated database
+4. Add the Notion Integration into your duplicated database: [Notion's guide on how to connect your integrations](https://www.notion.so/help/add-and-manage-connections-with-the-api#add-connections-to-pages)
 5. Find the database ID:
-[Notion's guid on how to find the database ID](https://developers.notion.com/reference/retrieve-a-database)
+[Notion's guide on how to find the database ID](https://developers.notion.com/reference/retrieve-a-database)
 6. Click on the settings Icon and navigate to the settings dashboard, on the left hand side you will find the settings tab, enter your KEY and Database ID
 7. You're good to go!
 
