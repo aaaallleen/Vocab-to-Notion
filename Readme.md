@@ -11,7 +11,9 @@ How to install:
 2. At the extensions tab, click on manage extensions
 3. Turn on the Developer mode toggle
 4. Choose Load Unpack option and navigate to the folder where the extension is stored
+
 Setup:
+
 1. Create an Notion Integration:
 [Notion's guide on how to create an integration](https://www.notion.so/help/create-integrations-with-the-notion-api)
 2. Copy the Internal Integration Secret
