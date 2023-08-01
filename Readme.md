@@ -23,6 +23,7 @@ Setup:
 ![Find DatabaseID](Readme/connection.png)
 
 You could copy the link to view and find the Database ID.
+
 6. Click on the settings Icon and navigate to the settings dashboard, on the left hand side you will find the settings tab, enter your KEY and Database ID
 7. You're good to go!
 
