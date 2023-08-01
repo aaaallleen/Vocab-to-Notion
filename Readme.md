@@ -19,6 +19,10 @@ Setup:
 4. Add the Notion Integration into your duplicated database: [Notion's guide on how to connect your integrations](https://www.notion.so/help/add-and-manage-connections-with-the-api#add-connections-to-pages)
 5. Find the database ID:
 [Notion's guide on how to find the database ID](https://developers.notion.com/reference/retrieve-a-database)
+
+![Find DatabaseID](Readme/connection.png)
+
+You could copy the link to view and find the Database ID.
 6. Click on the settings Icon and navigate to the settings dashboard, on the left hand side you will find the settings tab, enter your KEY and Database ID
 7. You're good to go!
 
