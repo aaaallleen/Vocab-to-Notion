@@ -1,9 +1,11 @@
 The Plugin allows adds a button to the Oxford learner's dictionary page and allows you to send the data of the vocabulary to Notion.
 
 ![Alt text](Readme/demo1.png)
+
 You can also add your own vocabularies from the popup.
 
 ![Alt text](Readme/demo2.png)
+
 How to install:
 1. Download the source code
 2. At the extensions tab, click on manage extensions
