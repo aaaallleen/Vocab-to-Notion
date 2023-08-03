@@ -58,7 +58,7 @@ function injectButtonIntoPage() {
     // Find all occurrences of the class "sense" on the page
     const SensElements = document.querySelectorAll(".sense");
     // Iterate through each "sense" element and add a button beside it
-    const Word = getWord();
+    
     SensElements.forEach((SensElement) => {
         const button = createButton();
         const defElement = SensElement.querySelector(".def");
@@ -68,11 +68,13 @@ function injectButtonIntoPage() {
         else{
         console.error("No definitions found");
         }
+        const Word = getWord();
         Word.definition = extractDefinition(SensElement);
         Word.date = getDate();
         button.addEventListener("click", () => {
            chrome.runtime.sendMessage({action: "sendToNotion", data: Word }, (response)=>{
                 if(response.success){
+                    console.log(Word);
                     alert("Vocabulary sent to Notion successfully!");
                 }
                 else{
