@@ -2,10 +2,8 @@
   "name": "Dictionary to Notion",
   "version": "0.4.0",
   "description": "Saving Dicionary vocabularies to Notion",
-  "permissions": [
-      "pageCapture", 
-      "storage", 
-      "tabs"
+  "permissions": [ 
+      "storage" 
   ],
   "host_permissions":[
       "https://*.oxfordlearnersdictionaries.com/definition/english/*",
