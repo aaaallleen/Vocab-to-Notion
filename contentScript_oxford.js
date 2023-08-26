@@ -32,12 +32,10 @@ class VocabularyExtension {
                     this.extractDefinition(senseElement),
                     this.getPos()
                 );
-                console.log(word);
                 chrome.runtime.sendMessage(
                     { action: "sendToNotion", data: word },
                     (response) => {
                         if (response.success) {
-                            console.log(word);
                             alert("Vocabulary sent to Notion successfully!");
                         } else {
                             alert(response.error);
@@ -65,8 +63,7 @@ class VocabularyExtension {
         button.style.marginLeft = "10px";
         button.style.width = "30px";
         button.style.height = "30px";
-//     return button;
-      return button;
+        return button;
     }
   
     extractDefinition(element) {

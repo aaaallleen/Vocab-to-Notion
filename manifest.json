@@ -1,6 +1,6 @@
 {
   "name": "Dictionary to Notion",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Saving Dicionary vocabularies to Notion, now supporting Oxford Learner's Dictionary and Cambridge Dictionary!",
   "permissions": [ 
       "storage" 

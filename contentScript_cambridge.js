@@ -12,25 +12,10 @@ class VocabularyExtension {
     }
     initialize() {
       this.injectButtonIntoPage();
-      chrome.runtime.onMessage.addListener(this.handleMessage.bind(this));
+      document.addEventListener("DOMContentLoaded", () => {
+         chrome.runtime.onMessage.addListener(this.handleMessage.bind(this));
+    });
     }
-    createButton() {
-        const button = document.createElement("img");
-          button.src = chrome.runtime.getURL("icons/send.png");
-          button.alt = "Send to Notion";
-      //css for the button layout
-          button.style.cursor = "pointer";
-          button.style.verticalAlign = "middle";
-          button.style.border = "2px solid #a6a6a6";
-          button.style.background = "#d1d1d1";
-          button.style.borderRadius = "10%";
-          button.style.border
-          button.style.marginLeft = "10px";
-          button.style.width = "30px";
-          button.style.height = "30px";
-  //     return button;
-        return button;
-      }
     injectButtonIntoPage() {
         try{
             const entryElements = document.getElementsByClassName("pr entry-body__el");
@@ -51,12 +36,10 @@ class VocabularyExtension {
                                 this.extractDefinition(defElement),
                                 this.getPos(entryElement)
                             );
-                            console.log(word);
                             chrome.runtime.sendMessage(
                                 { action: "sendToNotion", data: word },
                                 (response) => {
                                     if (response.success) {
-                                        console.log(word);
                                         alert("Vocabulary sent to Notion successfully!");
                                     } else {
                                         alert(response.error);
@@ -73,6 +56,22 @@ class VocabularyExtension {
         catch (error){
             console.error(error.message);
         }
+    }
+    createButton() {
+        const button = document.createElement("img");
+          button.src = chrome.runtime.getURL("icons/send.png");
+          button.alt = "Send to Notion";
+      //css for the button layout
+          button.style.cursor = "pointer";
+          button.style.verticalAlign = "middle";
+          button.style.border = "2px solid #a6a6a6";
+          button.style.background = "#d1d1d1";
+          button.style.borderRadius = "10%";
+          button.style.border
+          button.style.marginLeft = "10px";
+          button.style.width = "30px";
+          button.style.height = "30px";
+          return button;
     }
     extractDefinition(element){
         const divElement = element.querySelector(".def.ddef_d.db"); 
