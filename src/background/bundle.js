@@ -1165,7 +1165,7 @@ async function addToNotionDatabase(data){
                             {
                             "type": "text",
                             "text": {
-                                "content": data.definition,
+                                "content": data.def,
                                 "link": null
                             },
                             "annotations": {
@@ -1176,7 +1176,7 @@ async function addToNotionDatabase(data){
                                 "code": false,
                                 "color": "default"
                             },
-                            "plain_text": data.definition,
+                            "plain_text": data.def,
                             "href": null
                             }
                         ]
