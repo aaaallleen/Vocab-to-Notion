@@ -13,7 +13,9 @@ class VocabularyExtension {
   
     initialize() {
       this.injectButtonIntoPage();
-      chrome.runtime.onMessage.addListener(this.handleMessage.bind(this));
+      document.addEventListener("DOMContentLoaded", () => {
+          chrome.runtime.onMessage.addListener(this.handleMessage.bind(this));
+      });
     }
   
     injectButtonIntoPage() {
